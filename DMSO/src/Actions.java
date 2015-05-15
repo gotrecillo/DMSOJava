@@ -1,9 +1,14 @@
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.TreeSet;
 
 
-public class Actions {
+public class Actions implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6531598267007980L;
 	private Collection<Action> actions;
 	
 	public Actions() {

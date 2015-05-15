@@ -1,5 +1,11 @@
+import java.io.Serializable;
 
-public class Monster implements Comparable<Monster>{
+
+public class Monster implements Comparable<Monster>, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4175209997951903246L;
 	private String id, name, size, type, alignement, ac, hd, speed, cr, imgPath;
 	private int hp, str, dex, con, intel, wis, cha, xp;
 	private Details details;

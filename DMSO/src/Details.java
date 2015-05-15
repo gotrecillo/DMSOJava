@@ -1,8 +1,13 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Details {
+public class Details implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 886388432897583023L;
 	private List<Detail> details;
 	
 	public Details() {

@@ -1,5 +1,11 @@
+import java.io.Serializable;
 
-public class Action implements Comparable<Action> {
+
+public class Action implements Comparable<Action>, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5777506861332572256L;
 	private String title, type, description, hit;
 
 	public Action(String title, String type, String description, String hit) {

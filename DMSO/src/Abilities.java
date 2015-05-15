@@ -1,8 +1,13 @@
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-public class Abilities {
+public class Abilities implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -249499154900150670L;
 	private Collection<Ability> abilities;
 	
 	public Abilities() {

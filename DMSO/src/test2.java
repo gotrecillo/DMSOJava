@@ -1,3 +1,15 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+
 
 public class test2 {
 	
@@ -34,6 +46,40 @@ public class test2 {
 		details.add(new Detail("sentidos", "Intuicion perruna 16"));
 		details.add(new Detail("idiomas", "---"));
 		lobo.setDetails(details);
-		System.out.println(lobo);
+		//serialize the wolf
+	    try (OutputStream file = new FileOutputStream("wolf.dat");
+	  	      OutputStream buffer = new BufferedOutputStream(file);
+	  	      ObjectOutput output = new ObjectOutputStream(buffer))
+	  	      {
+	  	      output.writeObject(lobo);
+	  	    }  
+	  	    catch(IOException ex){
+	  	    	System.out.println("caca");
+	  	    }finally{
+	  	    	
+	  	    }
+	 
+	  //deserialize the wolf.dat file
+	   try( InputStream file = new FileInputStream("wolf.dat");
+			   InputStream buffer = new BufferedInputStream(file);
+			   ObjectInput input = new ObjectInputStream (buffer);)
+			   {  
+			   try{
+			        //deserialize the List
+			        Monster recoveredMonster = (Monster)input.readObject();
+			        //display its data
+			         System.out.println("Recovered monster: \n " + recoveredMonster);
+			      }
+			      finally{
+			        input.close();
+			      }
+	    }
+	    catch(ClassNotFoundException ex){
+	    	System.out.println("cacota");
+	    }
+	    catch(IOException ex){
+	    	ex.printStackTrace();
+	    }
 	}
+
 }

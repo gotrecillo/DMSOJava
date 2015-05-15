@@ -15,7 +15,8 @@ public class Test {
 		Action claw = new Action("Garrazo","Ataque cuerpo a cuerpo","+4 a golpear te araña hasa la saciedad", "6 (4d3) daño lacerate");
 		actions.add(claw);
 		actions.add(bite);
-		System.out.println(actions);
+		//serialize the List
+	
 	}
 
 }

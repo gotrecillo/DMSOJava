@@ -1,5 +1,11 @@
+import java.io.Serializable;
 
-public class Ability implements Comparable<Ability>{
+
+public class Ability implements Comparable<Ability>, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6151190089695778738L;
 	private String name, description;
 
 	
