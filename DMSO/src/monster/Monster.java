@@ -1,3 +1,4 @@
+package monster;
 import java.io.Serializable;
 
 
@@ -6,8 +7,8 @@ public class Monster implements Comparable<Monster>, Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 4175209997951903246L;
-	private String id, name, size, type, alignement, ac, hd, speed, cr, imgPath;
-	private int hp, str, dex, con, intel, wis, cha, xp;
+	private String id, name, size, type, alignement, acType, hd, cr, imgPath;
+	private int hp, ac, speed, str, dex, con, intel, wis, cha, xp;
 	private Details details;
 	private Abilities abilities;
 	private Actions actions;
@@ -44,11 +45,17 @@ public class Monster implements Comparable<Monster>, Serializable{
 	public void setAlignement(String alignement) {
 		this.alignement = alignement;
 	}
-	public String getAc() {
+	public int getAc() {
 		return ac;
 	}
-	public void setAc(String ac) {
+	public void setAc(int ac) {
 		this.ac = ac;
+	}
+	public String getAcType() {
+		return acType;
+	}
+	public void setAcType(String acType) {
+		this.acType = acType;
 	}
 	public String getHd() {
 		return hd;
@@ -56,10 +63,10 @@ public class Monster implements Comparable<Monster>, Serializable{
 	public void setHd(String hd) {
 		this.hd = hd;
 	}
-	public String getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
-	public void setSpeed(String speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 	public String getCr() {
@@ -149,7 +156,7 @@ public class Monster implements Comparable<Monster>, Serializable{
 		s += "    <size>" + size + "</size>\n";
 		s += "    <type>" + type + "</type>\n";
 		s += "    <alignement>" + alignement + "</alignement>\n";
-		s += "    <ac>"  + ac + "</ac>\n";
+		s += "    <ac>" + ac + " " +  acType + "</ac>\n";
 		s += "    <hp>" + hp + "</hp>\n";
 		s += "    <speed>" + speed + "</speed>\n";
 		s += "    <str>" + str + "</str>\n";
@@ -171,4 +178,5 @@ public class Monster implements Comparable<Monster>, Serializable{
 	public int compareTo(Monster m) {
 		return this.id.compareTo(m.id);
 	}
+
 }

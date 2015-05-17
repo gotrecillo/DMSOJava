@@ -1,3 +1,4 @@
+package monster;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
@@ -22,15 +23,14 @@ public class Actions implements Serializable {
 	public void add(Action a){
 		actions.add(a);
 	}
-
+	
 	@Override
 	public String toString() {
-		String s = "    <actions>\n";
+		String s = "";
 		Iterator<Action> iteAc = actions.iterator();
 		while (iteAc.hasNext()) {
 			s +=iteAc.next().toString() + "\n";
 		}
-		s +="    </actions>\n";
 		return s;
 	}
 

@@ -1,3 +1,4 @@
+package monster;
 import java.io.Serializable;
 
 
@@ -54,22 +55,7 @@ public class Action implements Comparable<Action>, Serializable{
 
 	@Override
 	public String toString() {
-		String s = "      <action>\n";
-		if (!title.isEmpty()){
-			s += "        <title>" + title + "</title>\n";
-		}
-		if (!type.isEmpty()){
-			s += "        <type>" + type + "</type>\n";
-
-		}
-		if (!description.isEmpty()){
-			s += "        <description>" + description + "</description>\n";
-		}
-		if (!hit.isEmpty()){
-			s += "        <hit>" + hit + "</hit>\n";
-		}
-		s += "      </action>";
-		return s;
+		return title;
 	}
 
 	
