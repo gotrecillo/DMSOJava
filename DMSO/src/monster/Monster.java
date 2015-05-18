@@ -8,7 +8,7 @@ public class Monster implements Comparable<Monster>, Serializable{
 	 */
 	private static final long serialVersionUID = 4175209997951903246L;
 	private String id, name, size, type, alignement, acType, hd, cr, imgPath;
-	private int hp, ac, speed, str, dex, con, intel, wis, cha, xp;
+	private int hp, ac, speed, speedBurrow, speedClimb, speedFly, speedSwim,  str, dex, con, intel, wis, cha, xp;
 	private Details details;
 	private Abilities abilities;
 	private Actions actions;
@@ -68,6 +68,30 @@ public class Monster implements Comparable<Monster>, Serializable{
 	}
 	public void setSpeed(int speed) {
 		this.speed = speed;
+	}
+	public int getSpeedClimb() {
+		return speedClimb;
+	}
+	public void setSpeedClimb(int speedClimb) {
+		this.speedClimb = speedClimb;
+	}
+	public int getSpeedSwim() {
+		return speedSwim;
+	}
+	public void setSpeedSwim(int speedSwim) {
+		this.speedSwim = speedSwim;
+	}
+	public int getSpeedBurrow() {
+		return speedBurrow;
+	}
+	public void setSpeedBurrow(int speedBurrow) {
+		this.speedBurrow = speedBurrow;
+	}
+	public int getSpeedFly() {
+		return speedFly;
+	}
+	public void setSpeedFly(int speedFly) {
+		this.speedFly = speedFly;
 	}
 	public String getCr() {
 		return cr;
